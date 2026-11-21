@@ -1,0 +1,875 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+
+
+
+<head>
+
+
+  <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Engagement Invitation</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+
+      --rose: #c0657f;
+
+      --dark: #7a3a4d;
+
+      --gold: #d4a73a;
+
+      --bg: #fff8f9
+    }
+
+
+
+    * {
+
+      box-sizing: border-box
+    }
+
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--bg);
+
+      color: var(--dark);
+
+      font-family: 'Cormorant Garamond', serif;
+
+      text-align: center;
+
+      background-image: radial-gradient(circle at 10% 10%, #ffe3ea 0, transparent 40%), radial-gradient(circle at 90% 70%, #ffe3ea 0, transparent 40%)
+    }
+
+
+
+    section {
+
+      max-width: 480px;
+
+      margin: auto;
+
+      padding: 40px 22px
+    }
+
+
+
+    h2 {
+
+      color: var(--rose);
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      font-size: 24px;
+
+      margin: 0 0 18px
+    }
+
+
+
+    .script {
+
+      font-family: 'Great Vibes', cursive;
+
+      font-size: 54px;
+
+      color: var(--rose);
+
+      margin: 4px 0
+    }
+
+
+
+    .small {
+
+      font-size: 13px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase
+    }
+
+
+
+    .frame {
+
+      border: 2px solid var(--gold);
+
+      border-radius: 18px;
+
+      padding: 28px 18px;
+
+      margin: 20px 0
+    }
+
+
+
+    .orn {
+
+      color: var(--gold);
+
+      font-size: 26px
+    }
+
+
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 650px;
+      margin: 25px auto;
+    }
+
+    #gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    @media (max-width: 600px) {
+      #gallery img {
+        height: 190px;
+      }
+    }
+
+
+    .big {
+
+      font-size: 40px;
+
+      font-weight: 600;
+
+      margin: 0 10px
+    }
+
+
+
+    .row {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin: 14px 0
+    }
+
+
+
+    .row b {
+
+      font-weight: 400;
+
+      border-left: 1px solid var(--rose);
+
+      height: 34px
+    }
+
+
+
+    #cd {
+
+      font-size: 20px;
+
+      margin-top: 6px
+    }
+
+
+
+    table {
+
+      width: 100%;
+
+      border-collapse: collapse
+    }
+
+
+
+    th {
+
+      font-weight: 400;
+
+      font-size: 13px;
+
+      color: #9c7a84;
+
+      padding: 6px;
+
+      border-bottom: 2px solid var(--rose)
+    }
+
+
+
+    td {
+
+      padding: 9px 0;
+
+      font-size: 17px
+    }
+
+
+
+    td.on {
+
+      background: var(--rose);
+
+      color: #fff;
+
+      border-radius: 50%
+    }
+
+
+
+    .btn {
+
+      display: inline-block;
+
+      background: var(--rose);
+
+      color: #fff;
+
+      border: 0;
+
+      border-radius: 30px;
+
+      padding: 13px 30px;
+
+      font: 600 17px 'Cormorant Garamond', serif;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+      margin: 12px 0
+    }
+
+
+
+    a.lnk {
+
+      color: var(--rose);
+
+      cursor: pointer;
+
+      text-decoration: underline
+    }
+
+
+
+    .dots {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      margin-top: 12px
+    }
+
+
+
+    .dots i {
+
+      width: 42px;
+
+      height: 42px;
+
+      border-radius: 50%;
+
+      box-shadow: 0 3px 8px #0002
+    }
+
+
+
+    input,
+
+    textarea {
+
+      width: 100%;
+
+      border: 1px solid #e8b8c6;
+
+      border-radius: 10px;
+
+      padding: 13px;
+
+      font: 18px 'Cormorant Garamond', serif;
+
+      color: var(--dark);
+
+      background: #fff;
+
+      margin-bottom: 12px
+    }
+
+
+
+    textarea {
+
+      height: 110px;
+
+      resize: none
+    }
+
+
+
+    .wish {
+
+      background: #fff;
+
+      border: 1px solid #f0cdd6;
+
+      border-radius: 12px;
+
+      padding: 12px;
+
+      margin-top: 12px;
+
+      text-align: left
+    }
+
+
+
+    .wish small {
+
+      color: #9c7a84;
+
+      float: right
+    }
+
+
+
+    iframe {
+
+      width: 100%;
+
+      height: 240px;
+
+      border: 0;
+
+      border-radius: 16px;
+
+      margin-top: 14px
+    }
+
+    body.lock {
+      overflow: hidden;
+    }
+
+    #cover {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: linear-gradient(160deg, #c0657f, #e2a3b4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity .8s, visibility .8s;
+    }
+
+    #cover.gone {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .cover-card {
+      width: min(82vw, 340px);
+      background: #fffafb;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px #0004;
+      padding: 34px 20px 40px;
+      position: relative;
+      animation: coverRise 1s both;
+    }
+
+    @keyframes coverRise {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cover-heart {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 22px;
+      box-shadow: 0 6px 14px #c0657f66;
+      animation: coverPulse 2s infinite;
+    }
+
+    @keyframes coverPulse {
+      50% {
+        box-shadow: 0 0 0 14px #c0657f22;
+      }
+    }
+
+    .cover-card .script {
+      font-size: 42px;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .cover-amp {
+      font-family: 'Great Vibes', cursive;
+      font-size: 26px;
+      color: var(--rose);
+    }
+
+    .cover-card hr {
+      border: 0;
+      border-top: 1px solid #e8b8c6;
+      width: 60%;
+      margin: 14px auto;
+    }
+
+    .cover-card p {
+      margin: 10px 0;
+      font-size: 21px;
+      color: var(--rose);
+    }
+  </style>
+
+</head>
+
+
+
+<body class="lock">
+
+  <div id="cover">
+    <div class="cover-card">
+      <div class="cover-heart">♥</div>
+      <div class="script" id="coverGroom"></div>
+      <div class="cover-amp">&amp;</div>
+      <div class="script" id="coverBride"></div>
+      <hr>
+      <p id="coverDate"></p>
+      <p>Cordially Invites</p>
+      <button class="btn" id="openBtn" style="padding:10px 38px;font-size:19px;text-transform:none;letter-spacing:0">
+        Open
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <section>
+
+    <div class="small">Engagement Ceremony Info</div>
+
+    <p>With great joy, we announce our engagement. 💍</p>
+
+    <div class="script" id="groom"></div>
+
+    <div class="small">Groom</div>
+
+    <div class="script" style="font-size:36px">&amp;</div>
+
+    <div class="script" id="bride"></div>
+
+    <div class="small">Bride</div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Photo Gallery</h2>
+
+    <div class="gallery" id="gallery"></div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Engagement Party Info</h2>
+
+
+
+    <p>The engagement party will take place at:</p>
+
+
+
+    <div style="font-size:26px;font-weight:600" id="time"></div>
+
+
+
+    <div class="row">
+
+      <span id="dow"></span>
+
+      <b></b>
+
+      <span class="big" id="day"></span>
+
+      <b></b>
+
+      <span id="mon"></span>
+
+    </div>
+
+
+
+    <div class="small">Countdown</div>
+
+    <div id="cd"></div>
+
+
+
+    <div class="frame">
+
+      <div class="orn">❦</div>
+
+      <div style="font-weight:600;margin:6px 0 12px" id="calTitle"></div>
+
+      <table id="cal"></table>
+
+      <div class="orn">❦</div>
+
+    </div>
+
+
+
+    <a class="lnk" id="ics">Add to Calendar</a><br>
+
+
+
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Engagement Party Venue</h2>
+
+    <a class="lnk" id="mapLink" target="_blank" rel="noopener"></a>
+
+    <iframe id="map" loading="lazy"></iframe>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Dress Code</h2>
+
+    <div style="color:var(--rose)" id="dress"></div>
+
+    <div class="dots" id="dots"></div>
+
+  </section>
+
+
+
+  <section>
+
+    <h2>Guestbook</h2>
+
+    <div style="border:1px solid #f0cdd6;border-radius:16px;padding:18px">
+
+      <input id="gname" placeholder="Enter your name*">
+
+      <textarea id="gmsg" placeholder="Enter your wishes*"></textarea>
+
+      <button class="btn" id="sendWish" type="button">Send Wishes</button>
+      <p id="wishStatus" role="status" aria-live="polite"></p>
+
+    </div>
+
+    <div id="wishes"></div>
+
+  </section>
+
+
+
+  <script type="module">
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAvmwSqsXamUUSnhXz7QhOmWMplQXUqM4",
+      authDomain: "walid-manar-guestbook.firebaseapp.com",
+      projectId: "walid-manar-guestbook",
+      storageBucket: "walid-manar-guestbook.firebasestorage.app",
+      messagingSenderId: "503128987172",
+      appId: "1:503128987172:web:16e2b3d0eb0c3584c82ab1"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    /* ====== EDIT HERE ====== */
+
+
+    const CFG = {
+      groom: "Walid",
+      bride: "Manar",
+      date: "2026-12-10",       // YYYY-MM-DD
+      start: "18:00",           // 6:00 PM
+
+      venueLink: "https://maps.app.goo.gl/JpKSLdcsw54XjnRR9",
+      venueName: "VIENNA HALL",
+      dress: "Pink dresses",
+      colors: ["#e3a9a9", "#ff4d88", "#ff7fa8", "#ff9fba", "#ffb8cc"],
+      photos: [
+        "assets/i01.jpeg",
+        "assets/i02.jpeg"
+      ]
+    };
+
+    /* ======================= */
+
+    const $ = id => document.getElementById(id);
+
+    const d = new Date(CFG.date + "T" + CFG.start + ":00");
+
+    // Opening cover
+    $("coverGroom").textContent = CFG.groom;
+    $("coverBride").textContent = CFG.bride;
+    $("coverDate").textContent = d.toLocaleDateString("en", {
+      month: "long", day: "numeric", year: "numeric"
+    });
+    $("openBtn").addEventListener("click", () => {
+      $("cover").classList.add("gone");
+      document.body.classList.remove("lock");
+      window.scrollTo(0, 0);
+    });
+
+    const t12 = s => {const [h, m] = s.split(":").map(Number); return ((h + 11) % 12 + 1) + ":" + String(m).padStart(2, "0") + (h < 12 ? " AM" : " PM");};
+
+
+
+    $("groom").textContent = CFG.groom; $("bride").textContent = CFG.bride;
+
+    document.title = CFG.groom + " & " + CFG.bride;
+
+    $("time").textContent = t12(CFG.start);
+
+    $("dow").textContent = d.toLocaleDateString("en", {weekday: "long"}).toUpperCase();
+
+    $("day").textContent = String(d.getDate()).padStart(2, "0");
+
+    $("mon").textContent = d.toLocaleDateString("en", {month: "long"}).toUpperCase();
+    $("dress").textContent = CFG.dress;
+
+    $("dots").innerHTML = CFG.colors.map(c => `<i style="background:${c}"></i>`).join("");
+
+    $("mapLink").textContent = CFG.venueLink; $("mapLink").href = CFG.venueLink;
+
+    $("map").src = "https://maps.google.com/maps?q=" + encodeURIComponent(CFG.venueName) + "&output=embed";
+
+
+
+
+    /* gallery */
+
+    /* gallery - only two photos */
+    $("gallery").innerHTML = CFG.photos.slice(0, 2)
+      .map((photo, i) => `
+    <div>
+      <img src="${photo}" alt="Our memory ${i + 1}">
+    </div>
+  `).join("");
+
+
+    /* countdown */
+
+    function tick() {
+
+      let s = Math.max(0, Math.floor((d - new Date()) / 1000));
+
+      const D = Math.floor(s / 86400); s %= 86400;
+
+      const H = Math.floor(s / 3600); s %= 3600;
+
+      $("cd").textContent = `${D} days ${H} hours ${Math.floor(s / 60)} min ${s % 60} sec`;
+
+    }
+
+    tick(); setInterval(tick, 1000);
+
+
+
+
+
+
+
+    /* calendar (week starts Monday) */
+
+    (function () {
+
+      const y = d.getFullYear(), m = d.getMonth();
+      const first = (new Date(y, m, 1).getDay() + 6) % 7;
+
+      const days = new Date(y, m + 1, 0).getDate();
+
+
+
+      let h = "<tr>" +
+
+        ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+
+          .map(x => `<th>${x}</th>`).join("") +
+
+        "</tr><tr>";
+
+
+
+      for (let i = 0; i < first; i++) {
+
+        h += "<td></td>";
+
+      }
+
+
+
+      for (let k = 1; k <= days; k++) {
+
+
+
+        if (k === d.getDate()) {
+
+          h += `<td class="on">♥ ${k}</td>`;
+
+        } else {
+
+          h += `<td>${k}</td>`;
+
+        }
+
+
+
+        if ((first + k) % 7 === 0 && k < days) {
+
+          h += "</tr><tr>";
+
+        }
+
+      }
+
+
+
+      $("cal").innerHTML = h + "</tr>";
+
+    })();
+    /* add to calendar (.ics) */
+
+    $("ics").onclick = () => {
+
+      const f = x => x.toISOString().replace(/[-:]|\.\d{3}/g, "");
+
+      const e = new Date(d.getTime() + 3 * 3600e3);
+
+      const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "BEGIN:VEVENT", "SUMMARY:Engagement of " + CFG.groom + " & " + CFG.bride,
+
+        "DTSTART:" + f(d), "DTEND:" + f(e), "LOCATION:" + CFG.venueLink, "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+
+      const a = document.createElement("a");
+
+      a.href = URL.createObjectURL(new Blob([ics], {type: "text/calendar"}));
+
+      a.download = "engagement.ics"; a.click();
+
+    };
+
+
+
+    /* guestbook - save wishes in Firebase Firestore */
+
+    async function addWish() {
+      const n = $("gname").value.trim();
+      const m = $("gmsg").value.trim();
+      const status = $("wishStatus");
+      const button = $("sendWish");
+
+      if (!n || !m) {
+        status.textContent = "Please enter your name and wishes.";
+        return;
+      }
+
+      if (n.length > 60 || m.length > 500) {
+        status.textContent = "Name must be 60 characters or less and wishes 500 characters or less.";
+        return;
+      }
+
+      button.disabled = true;
+      status.textContent = "Sending...";
+
+      try {
+        await addDoc(collection(db, "wishes"), {
+          name: n,
+          message: m,
+          createdAt: serverTimestamp()
+        });
+
+        $("gname").value = "";
+        $("gmsg").value = "";
+        status.textContent = "Your wishes have been sent successfully. Thank you! ❤️";
+      } catch (error) {
+        console.error("Guestbook submission failed:", error);
+        status.textContent = "Sorry, your message could not be sent. Please try again.";
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    $("sendWish").addEventListener("click", addWish);
+
+  </script>
+
+</body>
+
+
+
+</html>

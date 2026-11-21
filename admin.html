@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Walid &amp; Manar | Guestbook</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rose: #c0657f;
+            --dark: #7a3a4d;
+            --bg: #fff8f9;
+            --muted: #9c7a84;
+            --line: #f0cdd6
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 24px 14px 40px;
+            color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+            background: radial-gradient(circle at 10% 10%, #ffe3ea 0, transparent 40%), radial-gradient(circle at 90% 70%, #ffe3ea 0, transparent 40%), var(--bg)
+        }
+
+        .wrap {
+            width: min(760px, 100%);
+            margin: auto
+        }
+
+        header {
+            text-align: center;
+            padding: 18px 10px 25px
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase
+        }
+
+        .script {
+            color: var(--rose);
+            font: 52px 'Great Vibes', cursive;
+            margin: 8px 0 0
+        }
+
+        h1 {
+            color: var(--rose);
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 8px 0
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: 17px;
+            margin: 0
+        }
+
+        .panel {
+            background: #fffffff0;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 12px 35px #7a3a4d12
+        }
+
+        .login {
+            max-width: 440px;
+            margin: auto
+        }
+
+        label {
+            display: block;
+            font-size: 17px;
+            margin: 12px 0 6px
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid #e8b8c6;
+            border-radius: 10px;
+            padding: 13px;
+            font: 17px 'Cormorant Garamond', serif;
+            color: var(--dark);
+            background: white;
+            outline-color: var(--rose)
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 30px;
+            padding: 12px 25px;
+            background: var(--rose);
+            color: white;
+            font: 600 16px 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 15px
+        }
+
+        .btn:disabled {
+            opacity: .6;
+            cursor: wait
+        }
+
+        .secondary {
+            background: white;
+            color: var(--rose);
+            border: 1px solid var(--rose)
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .status {
+            min-height: 24px;
+            color: var(--rose);
+            font-size: 16px;
+            margin: 12px 0 0;
+            overflow-wrap: anywhere
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px
+        }
+
+        .topbar h2 {
+            margin: 0;
+            color: var(--rose);
+            font-size: 23px;
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+
+        .count {
+            display: inline-block;
+            border-radius: 14px;
+            background: #fff0f3;
+            padding: 12px 18px;
+            text-align: center;
+            margin: 4px 0 10px
+        }
+
+        .count strong {
+            display: block;
+            font-size: 28px;
+            line-height: 1;
+            color: var(--rose)
+        }
+
+        .count span {
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .wish {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 12px;
+            background: white
+        }
+
+        .wish-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: baseline;
+            flex-wrap: wrap
+        }
+
+        .wish-name {
+            font-size: 21px;
+            font-weight: 700
+        }
+
+        .wish-date {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .wish-message {
+            font-size: 19px;
+            line-height: 1.45;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            margin-top: 8px
+        }
+
+        .empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 28px 10px;
+            font-size: 19px
+        }
+
+        .note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 18px
+        }
+
+        @media(max-width:520px) {
+            .panel {
+                padding: 18px
+            }
+
+            .script {
+                font-size: 45px
+            }
+
+            .wish-head {
+                display: block
+            }
+
+            .wish-date {
+                display: block;
+                margin-top: 3px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="wrap">
+        <header>
+            <div class="eyebrow">Private Guestbook</div>
+            <div class="script">Walid &amp; Manar</div>
+            <h1>Guestbook Messages</h1>
+            <p class="sub">A collection of your guests' wishes ❤️</p>
+        </header>
+        <section id="loginPanel" class="panel login">
+            <h2 style="text-align:center;color:var(--rose);margin:0 0 8px">Welcome</h2>
+            <p class="sub" style="text-align:center;margin-bottom:16px">Sign in to read the wishes</p>
+            <form id="loginForm"><label for="email">Email address</label><input id="email" type="email"
+                    autocomplete="username" required placeholder="Enter your email"><label
+                    for="password">Password</label><input id="password" type="password" autocomplete="current-password"
+                    required placeholder="Enter your password"><button id="loginButton" class="btn" type="submit"
+                    style="width:100%">Sign In</button></form>
+            <p id="loginStatus" class="status" role="status" aria-live="polite"></p>
+        </section>
+        <section id="dashboard" class="panel hidden">
+            <div class="topbar">
+                <div>
+                    <h2>All Wishes</h2>
+                    <div id="signedInAs" class="sub" style="font-size:15px"></div>
+                </div>
+                <div class="actions"><button id="refreshButton" class="btn secondary"
+                        type="button">Refresh</button><button id="logoutButton" class="btn" type="button">Sign
+                        Out</button></div>
+            </div>
+            <div class="count"><strong id="wishCount">0</strong><span>Total Wishes</span></div>
+            <p id="dashboardStatus" class="status" role="status" aria-live="polite"></p>
+            <div id="wishesList"></div>
+        </section>
+        <p class="note">Only approved accounts can read the guestbook.</p>
+    </main>
+    <script type="module">
+        import {initializeApp} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+        import {getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+        import {getFirestore, collection, getDocs, orderBy, query} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAvmwSqsXamUUSNghXz7QhOmWMplQXUqM4",
+            authDomain: "walid-manar-guestbook.firebaseapp.com",
+            projectId: "walid-manar-guestbook",
+            storageBucket: "walid-manar-guestbook.firebasestorage.app",
+            messagingSenderId: "503128987172",
+            appId: "1:503128987172:web:16e2b3d0eb0c3584c82ab1"
+        };
+        const ALLOWED_UIDS = ["jxFCKnJjA5gnHLydPYPToEbRqrp2", "7B45y0DwHMWWo0lxvDXRZViOKdD2"];
+        const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
+        const $ = id => document.getElementById(id);
+
+        function friendlyError(error) {
+            const code = error?.code || "";
+            if (code.includes("auth/invalid-credential") || code.includes("auth/wrong-password") || code.includes("auth/user-not-found")) return "Email or password is incorrect.";
+            if (code.includes("auth/too-many-requests")) return "Too many attempts. Try again later.";
+            if (code.includes("auth/unauthorized-domain")) return "This domain is not authorized. Add it in Firebase Authentication > Settings > Authorized domains.";
+            if (code.includes("permission-denied")) return "Access denied. Check that the Firestore Rules were published and this account UID is allowed.";
+            return "Something went wrong. Please try again. (" + (code || "unknown error") + ")";
+        }
+        function showLogin(message = "") {$("loginPanel").classList.remove("hidden"); $("dashboard").classList.add("hidden"); $("loginStatus").textContent = message;}
+        function showDashboard(user) {$("loginPanel").classList.add("hidden"); $("dashboard").classList.remove("hidden"); $("signedInAs").textContent = user.email || "Signed in";}
+
+        $("loginForm").addEventListener("submit", async event => {
+            event.preventDefault(); const button = $("loginButton"); button.disabled = true; $("loginStatus").textContent = "Signing in...";
+            try {await signInWithEmailAndPassword(auth, $("email").value.trim(), $("password").value); $("password").value = "";}
+            catch (error) {console.error(error); $("loginStatus").textContent = friendlyError(error);}
+            finally {button.disabled = false;}
+        });
+
+        async function loadWishes() {
+            $("dashboardStatus").textContent = "Loading messages..."; $("wishesList").replaceChildren();
+            try {
+                const q = query(collection(db, "wishes"), orderBy("createdAt", "desc")), snapshot = await getDocs(q);
+                $("wishCount").textContent = String(snapshot.size);
+                if (snapshot.empty) {const empty = document.createElement("div"); empty.className = "empty"; empty.textContent = "No wishes yet. Your guests’ messages will appear here. ❤️"; $("wishesList").append(empty);}
+                snapshot.forEach(docSnap => {
+                    const data = docSnap.data(), card = document.createElement("article"); card.className = "wish";
+                    const head = document.createElement("div"); head.className = "wish-head";
+                    const name = document.createElement("div"); name.className = "wish-name"; name.textContent = typeof data.name === "string" ? data.name : "Guest";
+                    const date = document.createElement("time"); date.className = "wish-date"; const created = data.createdAt?.toDate ? data.createdAt.toDate() : null; date.textContent = created ? created.toLocaleString() : "Date unavailable";
+                    const message = document.createElement("div"); message.className = "wish-message"; message.textContent = typeof data.message === "string" ? data.message : "";
+                    head.append(name, date); card.append(head, message); $("wishesList").append(card);
+                });
+                $("dashboardStatus").textContent = "";
+            } catch (error) {console.error(error); $("wishCount").textContent = "—"; $("dashboardStatus").textContent = friendlyError(error);}
+        }
+        $("refreshButton").addEventListener("click", loadWishes);
+        $("logoutButton").addEventListener("click", async () => {await signOut(auth); showLogin("You have signed out.");});
+        onAuthStateChanged(auth, async user => {
+            if (!user) {showLogin(); return;}
+            if (!ALLOWED_UIDS.includes(user.uid)) {await signOut(auth); showLogin("This account is not approved to view the guestbook."); return;}
+            showDashboard(user); await loadWishes();
+        });
+    </script>
+</body>
+
+</html>
